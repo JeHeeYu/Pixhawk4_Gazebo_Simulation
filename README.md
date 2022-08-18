@@ -43,6 +43,10 @@ mkdir PX4
 cd PX4
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
+cd PX4-Autopilot
+git pull
+git submodule update
+sudo apt-get upgrade libignition-math2
 </pre>
 ## Error Note
 ### Error in REST Request
