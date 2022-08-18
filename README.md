@@ -36,7 +36,7 @@ export PYTHONPATH=/home/jhy/mavlink
 source ~/.bashrc 
 echo $PYTHONPATH
 </pre>
-　mavlink folder path 적용
+　mavlink Folder Path 적용
 ## Error Note
 ### Error in REST Request
 　Gazebo Version에 관한 오류로 config.yaml 파일 수정 필요함
