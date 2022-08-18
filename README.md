@@ -13,6 +13,30 @@
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
 bash ubuntu_sim_ros_melodic.sh
 </pre>
+### MAVROS
+<pre>
+sudo apt-get update
+sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras
+</pre>
+### MAVLINK
+<pre>
+sudo apt-get install python3-pip
+pip3 install --user future
+sudo apt-get install python3-tk
+mkdir mavlink
+cd mavlink
+git clone https://github.com/mavlink/mavlink.git --recursive
+</pre>
+　MAVLINk 관련 Install 후 Path 적용 필요
+<pre>
+vi ~/.bashrc
+
+// 맨 하단에 추가
+export PYTHONPATH=/home/jhy/mavlink
+source ~/.bashrc 
+echo $PYTHONPATH
+</pre>
+　mavlink folder path 적용
 ## Error Note
 ### Error in REST Request
 　Gazebo Version에 관한 오류로 config.yaml 파일 수정 필요함
