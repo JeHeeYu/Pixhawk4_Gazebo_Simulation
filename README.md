@@ -37,6 +37,13 @@ source ~/.bashrc
 echo $PYTHONPATH
 </pre>
 　mavlink Folder Path 적용
+### PX4
+<pre>
+mkdir PX4
+cd PX4
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
+</pre>
 ## Error Note
 ### Error in REST Request
 　Gazebo Version에 관한 오류로 config.yaml 파일 수정 필요함
