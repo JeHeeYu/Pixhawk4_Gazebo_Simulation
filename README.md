@@ -48,6 +48,12 @@ git pull
 git submodule update
 sudo apt-get upgrade libignition-math2
 </pre>
+### Python Package
+<pre>
+pip3 install empy
+pip3 install --user pyros-genmsg
+pip3 install --user toml
+</pre>
 ## Error Note
 ### Error in REST Request
 　Gazebo Version에 관한 오류로 config.yaml 파일 수정 필요함
@@ -91,4 +97,8 @@ servers:
 # cache:
 #   path: /tmp/ignition/fuel
 
+</pre>
+### Could not find a version that satisfies the requirement
+　python의 버전이 맞지 않아 발생
+<pre>
 </pre>
