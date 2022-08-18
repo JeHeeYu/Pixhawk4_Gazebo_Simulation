@@ -3,8 +3,8 @@
 <br>
 
 ## Environment
-　　OS : Ubuntu.18.04
-　　ROS : Melodic
+　OS : Ubuntu.18.04
+　ROS : Melodic
 <br>
 <br>
 ## Installation
@@ -14,12 +14,12 @@ bash ubuntu_sim_ros_melodic.sh
 </pre>
 ## Error Note
 ### Error in REST Request
-　　Gazebo Version에 관한 오류로 config.yaml 파일 수정 필요함
+　Gazebo Version에 관한 오류로 config.yaml 파일 수정 필요함
 <pre>
 cd /home/jhy/.ignition/fuel
 vi config.yaml
 </pre>
-config.yaml 내 url 수정
+　config.yaml 내 url 수정
 #### before
 <pre>
 ---
