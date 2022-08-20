@@ -19,6 +19,9 @@ sudo apt-get install ros-melodic-desktop-full
 echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 source /opt/ros/melodic/setup.bash
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo apt install python-rosdep
+rosdep update
 </pre>
 ### Gazebo
 <pre>
