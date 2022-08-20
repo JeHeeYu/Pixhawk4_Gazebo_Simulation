@@ -117,9 +117,9 @@ servers:
 # Where are the assets stored in disk.
 # cache:
 #   path: /tmp/ignition/fuel
-
 </pre>
-### Could not find a version that satisfies the requirement
-　python의 버전이 맞지 않아 발생
+### EXCEPTION: Unable to start server[bind: Address already in use]. There is probably another Gazebo process running.
+　Gazebo Process가 실행되어 있어 발생
 <pre>
+killall gzserver
 </pre>
