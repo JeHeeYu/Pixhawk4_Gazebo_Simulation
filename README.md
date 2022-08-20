@@ -4,10 +4,28 @@
 
 ## Environment
 　OS : Ubuntu.18.04
+<br>
 　ROS : Melodic
 <br>
 <br>
 ## Installation
+### ROS Melodic
+<pre>
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-get install curl # if you haven't already installed curl curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install ros-melodic-desktop-full
+
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+source /opt/ros/melodic/setup.bash
+</pre>
+### Gazebo
+<pre>
+sudo apt-get remove .*gazebo.*
+sudo apt-get update && sudo apt-get install gazebo6
+</pre>
+
 ### Toolchain & ROS
 <pre>
 wget https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_melodic.sh
