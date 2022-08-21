@@ -139,3 +139,6 @@ sympy delete
 <pre>
 wstool update -j 4 -t src
 </pre>
+### no rule to make target px4_sitl gazebo
+　px4 make 시 빌드 발생
+ 1. GStreamer Download
