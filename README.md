@@ -42,8 +42,6 @@ catkin build
 sudo apt-get install python3-pip
 pip3 install --user future
 sudo apt-get install python3-tk
-mkdir mavlink
-cd mavlink
 git clone https://github.com/mavlink/mavlink.git --recursive
 </pre>
 　MAVLINk 관련 Install 후 Path 적용 필요
