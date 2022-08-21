@@ -123,3 +123,9 @@ servers:
 <pre>
 killall gzserver
 </pre>
+### Catkin workspace `/home/jhy/catkin_ws` is already initialized. No action taken.
+　catkin init 오류
+<pre>
+catkin clean
+catkin config --extend /opt/ros/melodic
+</pre>
