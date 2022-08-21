@@ -9,25 +9,6 @@
 <br>
 <br>
 ## Installation
-### ROS Melodic
-<pre>
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-get install curl # if you haven't already installed curl curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-sudo apt-get update
-sudo apt-get install ros-melodic-desktop-full
-
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-source ~/.bashrc
-source /opt/ros/melodic/setup.bash
-sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
-sudo apt install python-rosdep
-rosdep update
-</pre>
-### Gazebo
-<pre>
-sudo apt-get remove .*gazebo.*
-sudo apt-get update && sudo apt-get install gazebo6
-</pre>
 
 ### Toolchain & ROS
 <pre>
@@ -38,6 +19,23 @@ bash ubuntu_sim_ros_melodic.sh
 <pre>
 sudo apt-get update
 sudo apt-get install ros-melodic-mavros ros-melodic-mavros-extras
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+sudo bash ./install_geographiclib_datasets.sh   
+sudo apt-get install python-catkin-tools python-rosinstall-generator -y
+
+rosinstall_generator --rosdistro kinetic mavlink | tee /tmp/mavros.rosinstall
+rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
+
+// catkin Init
+cd ~/catkin_ws
+catkin init
+wstool init src
+
+// Work Path Depedancy
+wstool merge -t src /tmp/mavros.rosinstall
+wstool update -t src -j4
+rosdep install --from-paths src --ignore-src -y
+catkin build
 </pre>
 ### MAVLINK
 <pre>
@@ -68,6 +66,10 @@ cd PX4-Autopilot
 git pull
 git submodule update
 sudo apt-get upgrade libignition-math2
+</pre>
+### GStreamer 
+<pre>
+apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 </pre>
 ### Python Package
 <pre>
@@ -134,4 +136,8 @@ catkin config --extend /opt/ros/melodic
 <pre>
 vi /PX4-Autopilot/Tools/setup/requirements.txt
 sympy delete
+</pre>
+### There already is a workspace config file .rosinstall at
+<pre>
+wstool update -j 4 -t src
 </pre>
