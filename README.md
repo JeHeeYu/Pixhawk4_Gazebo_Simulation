@@ -129,3 +129,9 @@ killall gzserver
 catkin clean
 catkin config --extend /opt/ros/melodic
 </pre>
+### error could not find a version that satisfies the requirement sympy
+　requirements.txt 내 sympy version 오류
+<pre>
+vi /PX4-Autopilot/Tools/setup/requirements.txt
+sympy delete
+</pre>
