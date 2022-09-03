@@ -143,3 +143,7 @@ wstool update -j 4 -t src
 　px4 make 시 빌드 발생
  1. GStreamer Download
 ## E: Unable to locate package g++-multilib E: Couldn't find any package by regex 'g++-multilib' E: Package 'gcc-multilib' has no installation candidate
+　ubush.sh 실행 시 발생
+<pre>
+bash ./ubuntu.sh --no-nuttx --no-sim-tools
+</pre>
